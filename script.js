@@ -487,18 +487,27 @@ document.addEventListener("DOMContentLoaded", () => {
       : "";
 
     if (mode === "full") {
-      document.getElementById("output").value = `<!DOCTYPE html>
-  <html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <title></title>
-  ${bootstrapLink}</head>
-  <body>
-  ${bodyHTML}
-  </body>
-  </html>`;
-    } else {
+
+  const ressLink =
+    `  <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css"/>\n`;
+
+  const styleLink =
+    `  <link rel="stylesheet" href="style.css" />\n`;
+
+  document.getElementById("output").value = `<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+${ressLink}${styleLink}${bootstrapLink}</head>
+<body>
+${bodyHTML}
+</body>
+</html>`;
+}
+ else {
       document.getElementById("output").value = bodyHTML;
     }
   };
 });
+
