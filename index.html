@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML構造ビルダー</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>HTML構造ビルダー（自分用）</h1>
+
+    <section>
+      <label>開始テンプレート：</label>
+
+      <label>
+        <input type="radio" name="templateMode" value="full" checked />
+        あり
+      </label>
+
+      <label>
+        <input type="radio" name="templateMode" value="partial" />
+        なし
+      </label>
+
+      <br />
+
+      <label>
+        <input type="checkbox" id="useBootstrap" />
+        Bootstrapを使う
+      </label>
+
+      <button id="resetBtn">リセット</button>
+    </section>
+
+    <div class="container">
+      <div class="panel">
+        <h2>タグ追加</h2>
+        <div id="tagButtons"></div>
+
+        <section>
+          <strong>追加方法：</strong>
+          <label>
+            <input type="radio" name="addMode" value="child" checked />
+            子として追加
+          </label>
+          <label>
+            <input type="radio" name="addMode" value="sibling" />
+            同階層に追加
+          </label>
+        </section>
+
+        <p class="note">
+          子：選択要素の中に入る<br />
+          同階層：選択要素の隣に並ぶ
+        </p>
+      </div>
+
+      <div class="panel">
+        <h2>構造</h2>
+        <pre id="treeView"></pre>
+        <div class="controls">
+          <button id="upBtn">▲ 上へ</button>
+          <button id="downBtn">▼ 下へ</button>
+          <button id="indentBtn">中に入れる</button>
+          <button id="outdentBtn">外に出す</button>
+          <button id="duplicateBtn">複製</button>
+          <button id="editCommentBtn">コメントアウト編集</button>
+
+          <button id="deleteBtn">削除</button>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <button id="generateBtn">HTML生成</button>
+    </section>
+
+    <section>
+      <h2>生成結果（コピー用）</h2>
+      <textarea id="output" rows="15"></textarea>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
