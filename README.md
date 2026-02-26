@@ -15,3 +15,4 @@
 
 ### 参考サイト
 https://web-saku.net/displaysize-japan/ 
+https://www.cman.jp/
